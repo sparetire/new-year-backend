@@ -4,6 +4,8 @@ const https = require('https');
 const helmet = require('koa-helmet');
 const controller = require('./controller');
 const router = require('koa-router')();
+const serve = require('koa-static');
+const path = require('path');
 const cors = require('./middleware/cors');
 const config = require('./config/app.config');
 const DBFactory = require('./lib/db-factory');
@@ -23,6 +25,7 @@ async function start() {
 	} else {
 		app.use(helmet());
 	}
+	app.use(serve(path.resolve(__dirname, '../public')));
 
 	app.use(controller(router))
 		.use(router.allowedMethods());

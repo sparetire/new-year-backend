@@ -3,7 +3,7 @@ const bodyParser = require('koa-bodyparser');
 // 就这一个方法，蠢点就蠢点算了
 function percent(opts) {
 	return async(ctx, next) => {
-		let score = parseInt(ctx.request.body.score, 10);
+		let score = parseFloat(ctx.request.body.score);
 		if (isNaN(score)) {
 			ctx.body = {
 				error: 'Invalid param'
