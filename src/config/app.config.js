@@ -12,10 +12,8 @@ module.exports = process.env.NODE_ENV === 'dev' ? {
 } : {
 	port: 80,
 	mongodb: {
-		username: 'lusir',
-		password: 'xjs2328038',
 		host: 'localhost',
-		port: '8588',
+		port: '27017',
 		dbName: 'new',
 		minPollSize: 5,
 		maxPollSize: 10
