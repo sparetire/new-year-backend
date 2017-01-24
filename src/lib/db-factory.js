@@ -12,7 +12,7 @@ DBFactory.stringify = function (opts) {
 	let urlObj = {
 		protocol: 'mongodb',
 		slashes: true,
-		auth: `${conf.username}:${conf.password}`,
+		// auth: `${conf.username}:${conf.password}`,
 		hostname: conf.host,
 		port: conf.port,
 		pathname: `/${conf.dbName}`
